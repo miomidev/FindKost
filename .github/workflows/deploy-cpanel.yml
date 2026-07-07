@@ -1,0 +1,42 @@
+name: FindKos Auto Deploy to cPanel
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Deploy to cPanel via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.CPANEL_SSH_HOST }}
+          username: ${{ secrets.CPANEL_SSH_USERNAME }}
+          password: ${{ secrets.CPANEL_SSH_PASSWORD }}
+          port: 22
+          script: |
+            cd /home/miomidev/findkos.my.id
+            
+            echo "📥 1. Fetching and resetting to latest code from GitHub..."
+            git fetch --all
+            git reset --hard origin/main
+            
+            echo "📦 2. Installing PHP dependencies..."
+            composer install --no-dev --optimize-autoloader
+            
+            echo "🗄️ 3. Running database migrations..."
+            php artisan migrate --force || true
+            
+            echo "🧹 4. Optimizing and clearing Laravel caches..."
+            php artisan optimize:clear
+            php artisan config:cache
+            php artisan route:cache
+            php artisan view:cache
+            
+            echo "🎉 Auto-Deployment completed successfully for FindKos!"
