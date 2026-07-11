@@ -64,7 +64,7 @@
                         </div>
                     </form>
                 </div>
-               <div class="card shadow-sm ms-2 ms-md-2">
+                <div class="card shadow-sm ms-2 ms-md-2">
                     <div
                         class="card-header bg-dark text-white d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-2">
 
@@ -148,8 +148,13 @@
                                                 <div class="modal fade" id="deleteModal{{ $p->id }}" tabindex="-1">
                                                     <div class="modal-dialog modal-dialog-centered modal-sm">
                                                         <div class="modal-content text-center p-4"
-                                                            style="border-radius:18px;">
-
+                                                            style="
+        border-radius:18px;
+        overflow:hidden;
+        word-wrap:break-word;
+        overflow-wrap:break-word;
+        white-space:normal;
+    ">
                                                             {{-- tombol X kanan atas --}}
                                                             <button type="button"
                                                                 class="btn-close position-absolute top-0 end-0 m-3"
@@ -173,9 +178,14 @@
 
                                                             {{-- TEXT --}}
                                                             <h5 class="fw-bold mb-2">Hapus Akun Ini?</h5>
-                                                            <p class="text-muted small mb-4">
-                                                                Yakin ingin menghapus? data yang telah di hapus tidak dapat
-                                                                di kembalikan.
+                                                            <p class="text-muted small mb-4"
+                                                                style="
+        line-height:1.5;
+        word-break:break-word;
+        margin-bottom:1.5rem;
+    ">
+                                                                Yakin ingin menghapus? Data yang telah dihapus tidak dapat
+                                                                dikembalikan.
                                                             </p>
 
                                                             {{-- BUTTON --}}
