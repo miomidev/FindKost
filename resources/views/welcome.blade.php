@@ -505,9 +505,14 @@
             <div class="row align-items-end">
                 <div class="col-md-6 hero-text fade-up">
                     <h1 class="hero-title mb-5">
-                        Temukan Kos Terbaik <br>
+                        di hina hina saya diam, diaci dimaki saya juga diam, tetapi hari ini saya sampaikan saya akan
+                        lawan...! <br>
                         di <span>Lohbener</span> dengan Mudah
                     </h1>
+                    {{-- <h1 class="hero-title mb-5">
+                        Temukan Kos Terbaik <br>
+                        di <span>Lohbener</span> dengan Mudah
+                    </h1> --}}
                     <p class="hero-sub mobile-sub text-dark mt-4 mt-md-5">
                         Sistem Rekomendasi Kos Berbasis Web <br>
                         di Kecamatan Lohbener, Indramayu
@@ -563,8 +568,8 @@
                 <div class="card-step w-100 fade-up">
                     <img src="{{ asset('images/step3.png') }}" class="img-fluid" alt="">
                     <h5>3. Dapat Rekomendasi</h5>
-                    <p>gw cek deploy bray</p>
-                    {{-- <p>Temukan kos terbaik untuk Anda</p> --}}
+                    {{-- <p>gw cek deploy bray</p> --}}
+                    <p>Temukan kos terbaik untuk Anda</p>
                 </div>
             </div>
 
