@@ -40,7 +40,7 @@
                     Profile Saya
                 </h3>
                 <small class="text-muted">
-                    Manajemen Akun / Profile Penyewa
+                    Manajemen Akun / Profile 
                 </small>
 
                 {{-- CARD --}}
