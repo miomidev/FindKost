@@ -519,7 +519,7 @@
                     </p>
 
                     <div class="search-box mb-3 position-relative w-75">
-                        <input type="text" class="form-control" placeholder="Cari Kos di Lohbener..." maxlength="39">
+                        <input type="text" class="form-control" placeholder="Cari Kos di wilayah Lohbener..." maxlength="39">
                         <i class="bi bi-search position-absolute top-50 end-0 translate-middle-y me-3 text-muted"></i>
                     </div>
                     <div class="hero-buttons">
