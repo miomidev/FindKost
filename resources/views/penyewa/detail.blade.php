@@ -328,9 +328,30 @@
                                         </div>
 
                                         {{-- Fasilitas --}}
-                                        <div class="small text-muted mb-3" style="min-height:48px;">
+                                        <div class="small text-muted mb-2">
+                                            <div class="fw-semibold text-dark mb-1">
+                                                <i class="bi bi-house-check-fill text-primary me-1"></i>
+                                                Fasilitas :
+                                            </div>
+
                                             @if ($kamar->fasilitas)
                                                 {{ implode(', ', $kamar->fasilitas) }}
+                                            @else
+                                                -
+                                            @endif
+                                        </div>
+
+                                        {{-- Deskripsi --}}
+                                        <div class="small text-muted mb-3">
+                                            <div class="fw-semibold text-dark mb-1">
+                                                <i class="bi bi-card-text text-primary me-1"></i>
+                                                Deskripsi :
+                                            </div>
+
+                                            @if ($kamar->deskripsi)
+                                                {{ $kamar->deskripsi }}
+                                            @else
+                                                -
                                             @endif
                                         </div>
 
@@ -355,7 +376,9 @@
                                                     ->where('kamar_id', $kamar->id)
                                                     ->whereIn('status', ['menunggu', 'disetujui'])
                                                     ->first();
-                                                $adaSewaAktif = $pengajuanUser->whereIn('status', ['aktif', 'jatuh_tempo'])->isNotEmpty();
+                                                $adaSewaAktif = $pengajuanUser
+                                                    ->whereIn('status', ['aktif', 'jatuh_tempo'])
+                                                    ->isNotEmpty();
                                             @endphp
 
                                             @if ($adaSewaAktif)
@@ -436,7 +459,7 @@
                                                         data-select="#durasiSelect{{ $kamar->id }}" required>
                                                         <option value="" selected disabled>Pilih jenis sewa
                                                         </option>
-                                                        @if(strtolower($kamar->tipe_harga) === 'bulanan')
+                                                        @if (strtolower($kamar->tipe_harga) === 'bulanan')
                                                             <option value="bulanan">Bulanan</option>
                                                         @endif
                                                         <option value="tahunan">Tahunan</option>

@@ -64,7 +64,7 @@
                         </div>
                     </form>
                 </div>
-               <div class="card shadow-sm ms-2 ms-md-2">
+                <div class="card shadow-sm ms-2 ms-md-2">
                     <div
                         class="card-header bg-dark text-white d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-2">
 
@@ -146,7 +146,8 @@
 
                                                 {{-- MODAL DELETE --}}
                                                 <div class="modal fade" id="deleteModal{{ $p->id }}" tabindex="-1">
-                                                    <div class="modal-dialog modal-dialog-centered modal-sm">
+                                                    <div class="modal-dialog modal-dialog-centered"
+                                                        style="max-width:300px;">
                                                         <div class="modal-content text-center p-4"
                                                             style="border-radius:18px;">
 
@@ -172,12 +173,18 @@
                                                             </div>
 
                                                             {{-- TEXT --}}
-                                                            <h5 class="fw-bold mb-2">Hapus Akun Ini?</h5>
-                                                            <p class="text-muted small mb-4">
-                                                                Yakin ingin menghapus? data yang telah di hapus tidak dapat
-                                                                di kembalikan.
-                                                            </p>
+                                                            <div class="mt-2 mb-4 text-center">
 
+                                                                <h5 class="fw-bold mb-3">
+                                                                    Hapus Akun Ini?
+                                                                </h5>
+
+                                                                <div class="text-muted small d-block"
+                                                                    style="width:100%; white-space:normal; overflow-wrap:anywhere; line-height:1.6;">
+                                                                    Apakah Anda yakin ingin menghapus akun ini?
+                                                                </div>
+
+                                                            </div>
                                                             {{-- BUTTON --}}
                                                             <div class="d-flex gap-2">
                                                                 <button type="button" class="btn btn-secondary w-100"
